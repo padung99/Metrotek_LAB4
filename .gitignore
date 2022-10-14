@@ -3,4 +3,6 @@ work/
 *.txt
 *.vstf
 db
-
+output_files
+*.bak
+incremental_db
