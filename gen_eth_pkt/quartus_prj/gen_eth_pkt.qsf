@@ -37,7 +37,7 @@
 
 
 set_global_assignment -name FAMILY "Cyclone V"
-set_global_assignment -name DEVICE 5CSEBA5U19C8
+set_global_assignment -name DEVICE 5CSEBA4U19C8
 set_global_assignment -name TOP_LEVEL_ENTITY gen_eth_pkt
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "01:23:49  OCTOBER 15, 2022"
