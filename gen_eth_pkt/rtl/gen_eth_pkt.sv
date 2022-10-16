@@ -64,10 +64,9 @@ module gen_eth_pkt #(
   output logic [7:0]        amm_address_o,
   output logic              amm_read_o,
   input  logic [31:0]       amm_readdata_i,
-  input  logic              amm_waitrequest_i
+  input  logic              amm_waitrequest_i,
   output logic              amm_write_o,
-  output logic [31:0]       amm_writedata_o,
-
+  output logic [31:0]       amm_writedata_o
 
 
 );
