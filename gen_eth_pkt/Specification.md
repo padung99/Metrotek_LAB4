@@ -18,7 +18,7 @@ Avalon-mm register file:
 - Ethernet packet generation: этот блок генерирует рандомизированные ethernet данных ( Payload ) с помощью алгоритма PSBS.  
 ---> После того, как Payload генерирован, модуль соединит каждую часть ethernet кадра вместе по стандарту IEEE 802.3  
 
-Структура одной ethernet кадры:  
+Структура одного ethernet кадра:  
 ![alt text](https://github.com/padung99/Metrotek_LAB4/blob/main/gen_eth_pkt/ethernet_frame.png)
 
 *Preamble&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7 bytes]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Последовательность бит, определяющая начало фрейма. Каждый байт преамбулы равен следующей &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;последовательности битов: 10101010  
@@ -29,7 +29,7 @@ Avalon-mm register file:
 *Payload&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[46-1500 bytes]: Данные, генерированы блоком "Ethernet packet generation"  
 *CRC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4 bytes]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Контрольная сумма, генерирована блоком "CRC generator"  
 
----> Так как у одного кадра очень большой объем (больше 1500 байтов), мы не можем передать все пакеты за 1 раз, это следует, что кадры, генерированы в блоке "Ethernet packet generation" разделяются на маленькие пакеты. Эти маленькие пакеты подаются в блок "CRC generator" и блок "Shift register" одновременно.
+---> Так как у одного кадра очень большой объем (больше 1500 байтов), мы не можем передать все пакеты за 1 раз, это следует, что кадры, генерированы в блоке "Ethernet packet generation",разделяются на маленькие пакеты. Эти маленькие пакеты подаются в блок "CRC generator" и блок "Shift register" одновременно.
 
 - CRC generator: Этот блок генерирует контрольную сумму с помощью алгоритма CRC для того, чтобы эти пакеты правильно получаются на стророне TSE.
 - Shift register: этот блок преобразует параллельные данные, которые получены с блока "Ethernet packet generation" на последовательные пакеты.
