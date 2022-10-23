@@ -25,9 +25,9 @@ Avalon-mm register file:
 *SFD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1 byte ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Признак начала кадра. Равен следующей последовательности битов: 10101011  
 *Destination address[6 bytes]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: MAC-адрес приемника ( получен по интерфейсу Avalon-mm, хранется в Avalon-MM register file )  
 *Source address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6 bytes]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: MAC-адрес передатчика ( получен по интерфейсу Avalon-mm, хранется в Avalon-MM register file )  
-*length&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2 bytes]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Размер кадров  
-*Payload&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[46-1500 bytes]: Данные, генерированы блоком "Ethernet packet generation"  
-*CRC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4 bytes]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Контрольная сумма, генерирована блоком "CRC generator"  
+*length&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2 bytes]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Размер кадров  
+*Payload&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[46-1500 bytes]: Данные, генерированы блоком "Ethernet packet generation"  
+*CRC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4 bytes]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Контрольная сумма, генерирована блоком "CRC generator"  
 
 ---> Так как у одного кадра очень большой объем (больше 1500 байтов), мы не можем передать все пакеты за 1 раз, это следует, что кадры, генерированы в блоке "Ethernet packet generation" разделяются на маленькие пакеты. Эти маленькие пакеты подаются в блок "CRC generator" и блок "Shift register" одновременно.
 
