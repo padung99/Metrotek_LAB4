@@ -17,7 +17,7 @@ Avalon-mm register file:
   
 - Ethernet packet generation: этот блок генерирует рандомизированные ethernet данных ( Payload ) с помощью алгоритма PSBS.
 
-Структура 1 ethernet кадра:  
+Структура одной ethernet кадры:  
 ![alt text](https://github.com/padung99/Metrotek_LAB4/blob/main/gen_eth_pkt/ethernet_frame.png)
 
 ---> Так как у одной кадры очень большой объем (больше 1500 байтов), мы не можем передать все пакеты за 1 раз, это следует, что кадры, генерированы в блоке "Ethernet packet generation" разделяются на маленькие пакеты. Эти маленькие пакеты подаются в блок "CRC generator" и блок "Shift register" одновременно.
