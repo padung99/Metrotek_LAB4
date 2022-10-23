@@ -21,8 +21,8 @@ Avalon-mm register file:
 Структура одной ethernet кадры:  
 ![alt text](https://github.com/padung99/Metrotek_LAB4/blob/main/gen_eth_pkt/ethernet_frame.png)
 
-*Preamble&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7 bytes]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Последовательность бит, определяющая начало фрейма. Каждый байт преамбулы равен следующей последовательности битов: 10101010  
-*SFD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1 byte ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Признак начала кадра. Равен следующей последовательности битов: 10101011  
+*Preamble&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7 bytes]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Последовательность бит, определяющая начало фрейма. Каждый байт преамбулы равен следующей последовательности битов: 10101010  
+*SFD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1 byte ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Признак начала кадра. Равен следующей последовательности битов: 10101011  
 *Destination address[6 bytes]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: MAC-адрес приемника ( получен по интерфейсу Avalon-mm, хранется в Avalon-MM register file )  
 *Source address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6 bytes]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: MAC-адрес передатчика ( получен по интерфейсу Avalon-mm, хранется в Avalon-MM register file )  
 *length&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2 bytes]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Размер кадров  
