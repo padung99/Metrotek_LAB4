@@ -1,5 +1,5 @@
 ###Высокоуровневая схема модулей генератора:  
-![alt text](https://github.com/padung99/Metrotek_LAB4/blob/main/eth_pkt_gen.png?raw=true)
+![alt text](https://github.com/padung99/Metrotek_LAB4/blob/main/gen_eth_pkt/eth_pkt_gen.png)
 
 ###Статичные параметры модуля генератора:
 + Скорость генерации ( От 0 до 1Gb/s на уровне L1 ).
